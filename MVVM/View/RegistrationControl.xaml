@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="carshering.MVVM.View.RegistrationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:carshering.MVVM.View"
+             xmlns:viewModel="clr-namespace:carshering.MVVM.ViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="500">
+
+    <UserControl.DataContext>
+        <viewModel:RegistrationViewModel/>
+    </UserControl.DataContext>
+
+    <Border Background="#272537"
+                        CornerRadius="20">
+
+        <StackPanel Margin="5">
+            <TextBlock Text="Введите логин" 
+                       Style="{StaticResource styleTextBlock}"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 5"/>
+            <TextBox   Text=""
+                       Style="{StaticResource styleTextBox}"
+                       Margin="10 5 10 5"/>
+            <TextBlock Text="Введите пароль" 
+                       Style="{StaticResource styleTextBlock}"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 5"/>
+            <TextBox   Text=""
+                       Style="{StaticResource styleTextBox}"
+                       Margin="10 5 10 5"/>
+            <TextBlock Text="Подтвердите пароль" 
+                       Style="{StaticResource styleTextBlock}"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 5"/>
+            <TextBox   Text=""
+                       Style="{StaticResource styleTextBox}"
+                       Margin="10 5 10 5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10" Height="30">
+                <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}" Margin="0 0 5 0"/>
+                <ComboBox ItemsSource="{Binding Genders}"
+                          SelectedItem="{Binding NodeCategoryGender}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" 
+                                       Style="{StaticResource styleTextBlock}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <Button Width="100" Height="30" Margin="50" Content="Вход"/>
+        </StackPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="carshering.MVVM.View.CarTraackingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:carshering.MVVM.View"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    
+    
+    <Grid Background="#272537">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="1">
+            <m:Map CredentialsProvider="NLVPzPzfo7VmhPbYNeCW~UE6v2wUoXaqCRIP8WMVy8Q~Am7z1Ta5Ke4LeZgbu-2gBov-SFH0AlEbqK-DmM8NWHTF7C3ZhqutfAwSx-CSwhnZ"
+               Mode="Road" Center="55.751999,37.617734"
+               ZoomLevel="12">
+                <Canvas
+                m:MapLayer.Position="{Binding MarkerMaps}"
+                m:MapLayer.PositionOrigin="BottomCenter" Width="30" Height="30">
+                    <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30" Foreground="Red"/>
+                </Canvas>
+            </m:Map>
+        </Border>
+    </Grid>
+</UserControl>

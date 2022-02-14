@@ -1,0 +1,35 @@
+﻿<Application x:Class="carshering.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:carshering"
+             xmlns:viewModel="clr-namespace:carshering.MVVM.ViewModel"
+             xmlns:view="clr-namespace:carshering.MVVM.View"
+             StartupUri="MVVM/View/AuthenticationView.xaml">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/RadioButtonSwitch.xaml"/>
+                <ResourceDictionary Source="Theme/TextBlockAuth.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxAuth.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginControl/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:RegistrationViewModel}">
+                <view:RegistrationControl/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CarTrackingViewModel}">
+                <view:CarTraackingControl/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+
+
+
+    </Application.Resources>
+</Application>
