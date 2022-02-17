@@ -37,19 +37,41 @@
             <TextBox   Text=""
                        Style="{StaticResource styleTextBox}"
                        Margin="10 5 10 5"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10" Height="30">
-                <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}" Margin="0 0 5 0"/>
-                <ComboBox ItemsSource="{Binding Genders}"
+            <Grid Margin="0 5 0 5">
+                <StackPanel HorizontalAlignment="Left" Margin="10 0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 0 10 10">
+                        <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}" Margin="0 0 10 0"/>
+                        <ComboBox ItemsSource="{Binding Genders}"
                           SelectedItem="{Binding NodeCategoryGender}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" 
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" 
                                        Style="{StaticResource styleTextBlock}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </StackPanel>
-            <Button Width="100" Height="30" Margin="50" Content="Вход"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10 10 10 0">
+                        <TextBlock Text="Роль" Style="{StaticResource styleTextBlock}" Margin="0 0 36 0"/>
+                        <ComboBox ItemsSource="{Binding Roles}" Background="Black" BorderBrush="DarkOrchid"
+                          SelectedItem="{Binding NodeCategoryRole}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" 
+                                       Style="{StaticResource styleTextBlock}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right">
+                    <Button Style="{StaticResource styleButton}" Command="{Binding DownloadImage}"
+                            Content="Выбрать фото" Margin="10 0 10 0"/>
+                    <Image Source="{Binding image.Source}" Width="200" Height="200"/>
+
+                </StackPanel>
+            </Grid>
+            <Button Style="{StaticResource styleButton}" Margin="50 0" Content="Регистрация"/>
         </StackPanel>
     </Border>
 </UserControl>

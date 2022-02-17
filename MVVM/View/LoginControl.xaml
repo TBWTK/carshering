@@ -30,7 +30,8 @@
             <TextBox   Text=""
                        Style="{StaticResource styleTextBox}"
                        Margin="10"/>
-            <Button Width="100" Height="30" Margin="50" Content="Вход"/>
+            <Button Style="{StaticResource styleButton}" 
+                    Margin="50" Content="Вход"/>
         </StackPanel>
     </Border>
 </UserControl>
