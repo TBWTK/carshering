@@ -45,7 +45,7 @@ namespace carshering.MVVM.ViewModel
             };
 
 
-            image = new Image();
+            Image = new Image();
 
             DownloadImage = new RelayCommand(o =>
             {
@@ -60,19 +60,33 @@ namespace carshering.MVVM.ViewModel
                 {
                     myBitmapImage.UriSource = new Uri(ofdPicture.FileName);
                     myBitmapImage.EndInit();
-                    image.Source = myBitmapImage;
+                    Image.Source = myBitmapImage;
+                }
+            });
+
+            CreateUser = new RelayCommand(o =>
+            {
+
+                if(NodeCategoryRole != null && NodeCategoryGender != null)
+                {
+                    string ex = Login + "  " + Password + "  " + NodeCategoryRole.Name + "  " + NodeCategoryGender.Name;
+                    System.Windows.MessageBox.Show(ex);
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Введены неверные данные");
                 }
             });
         }
         
-        private Image _image;
-        public Image image
+        private Image _Image;
+        public Image Image
         {
-            get => _image;
+            get => _Image;
             set
             {
-                _image = value;
-                OnPropertyChanged("image");
+                _Image = value;
+                OnPropertyChanged("Image");
             }
         }
 
@@ -102,6 +116,82 @@ namespace carshering.MVVM.ViewModel
             {
                 _NodeCategoryRole = value;
                 OnPropertyChanged("NodeCategoryRole");
+            }
+        }
+
+        private string _Login;
+        public string Login
+        {
+            get
+            {
+                return _Login;
+            }
+            set
+            {
+                _Login = value;
+                OnPropertyChanged("Login");
+            }
+        }
+
+        private string _Password;
+        public string Password
+        {
+            get
+            {
+                return _Password;
+            }
+            set
+            {
+                _Password = value;
+                OnPropertyChanged("Password");
+            }
+        }
+
+        private string _ConfirmPassword;
+        public string ConfirmPassword
+        {
+            get => _ConfirmPassword;
+            set
+            {
+                _ConfirmPassword = value;
+                OnPropertyChanged("ConfirmPassword");
+
+            }
+        }
+
+        private string _Name;
+        public string Name
+        {
+            get => _Name;
+            set
+            {
+                _Name = value;
+                OnPropertyChanged("Name");
+
+            }
+        }
+
+        private string _SecondName;
+        public string SecondName
+        {
+            get => _SecondName;
+            set
+            {
+                _SecondName = value;
+                OnPropertyChanged("SecondName");
+
+            }
+        }
+
+        private string _LastName;
+        public string LastName
+        {
+            get => _LastName;
+            set
+            {
+                _LastName = value;
+                OnPropertyChanged("LastName");
+
             }
         }
     }

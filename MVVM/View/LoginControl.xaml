@@ -20,18 +20,17 @@
                        Style="{StaticResource styleTextBlock}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 10"/>
-            <TextBox   Text=""
+            <TextBox   Text="{Binding Login}"
                        Style="{StaticResource styleTextBox}"
                        Margin="10"/>
             <TextBlock Text="Введите пароль" 
                        Style="{StaticResource styleTextBlock}"
                        HorizontalAlignment="Center"
                        Margin="0 10 0 10"/>
-            <TextBox   Text=""
+            <TextBox   Text="{Binding Password}"
                        Style="{StaticResource styleTextBox}"
                        Margin="10"/>
-            <Button Style="{StaticResource styleButton}" 
-                    Margin="50" Content="Вход"/>
+            <Button Style="{StaticResource styleButton}" Margin="50" Content="Вход" Command="{Binding EntrySystem}"/>
         </StackPanel>
     </Border>
 </UserControl>
