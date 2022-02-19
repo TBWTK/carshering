@@ -3,10 +3,11 @@
                     xmlns:local="clr-namespace:carshering.Theme">
 
     <Style x:Key="styleTextBox" TargetType="TextBox">
-        <Setter Property="FontFamily" Value="Helvetica"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="22"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="BorderBrush" Value="WhiteSmoke"/>
         <Setter Property="CaretBrush">
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

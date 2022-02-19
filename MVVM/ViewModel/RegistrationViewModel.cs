@@ -47,6 +47,7 @@ namespace carshering.MVVM.ViewModel
 
             Image = new Image();
 
+
             DownloadImage = new RelayCommand(o =>
             {
                 BitmapImage myBitmapImage = new BitmapImage();
@@ -89,7 +90,6 @@ namespace carshering.MVVM.ViewModel
                 OnPropertyChanged("Image");
             }
         }
-
 
         private Gender _NodeCategoryGender;
         public Gender NodeCategoryGender
@@ -194,5 +194,29 @@ namespace carshering.MVVM.ViewModel
 
             }
         }
+
+        private int _Age;
+        public int Age
+        {
+            get => _Age;
+            set
+            {
+                _Age = value;
+                OnPropertyChanged("Age");
+
+            }
+        }
+
+        //private Calendar _DateUser;
+        //public Calendar DateUser
+        //{
+        //    get => _DateUser;
+        //    set
+        //    {
+        //        _DateUser = value;
+        //        OnPropertyChanged("DateUser");
+
+        //    }
+        //}
     }
 }

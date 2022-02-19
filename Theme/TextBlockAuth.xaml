@@ -3,9 +3,9 @@
                     xmlns:local="clr-namespace:carshering.Theme">
     
     <Style x:Key="styleTextBlock" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Helvetica"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="22"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
     
 </ResourceDictionary>

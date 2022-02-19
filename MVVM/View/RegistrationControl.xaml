@@ -12,10 +12,10 @@
         <viewModel:RegistrationViewModel/>
     </UserControl.DataContext>
 
-    <Border CornerRadius="20" Background="#272537">
+    <Border CornerRadius="20" Background="White">
+        <!--#272537-->
 
-
-        <StackPanel Margin="5">
+        <StackPanel Margin="5 20 5 5">
             
             <StackPanel Orientation="Horizontal">
                 
@@ -26,47 +26,36 @@
                     <TextBlock Text="Введите имя" Style="{StaticResource styleTextBlock}" Margin="5"/>
                     <TextBlock Text="Введите фамилию" Style="{StaticResource styleTextBlock}" Margin="5"/>
                     <TextBlock Text="Введите отчество" Style="{StaticResource styleTextBlock}" Margin="5"/>
+
                     <StackPanel Orientation="Horizontal" Margin="5 10 5 5">
-                        <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}" Margin="0 0 10 0"/>
-                        <ComboBox ItemsSource="{Binding Genders}" SelectedItem="{Binding NodeCategoryGender}" Foreground="#272537">
+                        <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}"/>
+                        <ComboBox ItemsSource="{Binding Genders}" SelectedItem="{Binding NodeCategoryGender}" Margin="10 0 0 0">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}"/>
+                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}" Foreground="#272537" FontSize="18"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
+
                     <StackPanel Orientation="Horizontal" Margin="5 10 5 5">
-                        <TextBlock Text="Роль" Style="{StaticResource styleTextBlock}" Margin="0 0 36 0"/>
-                        <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding NodeCategoryRole}" Foreground="#272537">
+                        <TextBlock Text="Роль" Style="{StaticResource styleTextBlock}"/>
+                        <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding NodeCategoryRole}" Margin="10 0 0 0">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}"/>
+                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}" Foreground="#272537" FontSize="18"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
+
                     <StackPanel Orientation="Vertical" Margin="5">
                         <TextBlock Text="Дата рождения" Style="{StaticResource styleTextBlock}" VerticalAlignment="Center"/>
-                        <DatePicker x:Name="datePicker">
-                            <DatePicker.Style>
-                                <Style TargetType="DatePicker">
-                                    <Setter Property="IsDropDownOpen" Value="False"></Setter>
-                                    <Setter Property="FontFamily" Value="Helvetica"/>
-                                    <Setter Property="FontSize" Value="22"/>
-                                    <Setter Property="Background" Value="#272537"/>
-                                    <Setter Property="Foreground" Value="#272537"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="IsDropDownOpen" Value="True"></Setter>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="False">
-                                            <Setter Property="IsDropDownOpen" Value="False"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </DatePicker.Style>
-                        </DatePicker>
+                        <!--<DatePicker DisplayDateStart="1/1/1950" SelectedDateFormat="Short" SelectedDate="{Binding DateUser}" />-->
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5 10 5 5" >
+                        <TextBlock Text="Возраст" Style="{StaticResource styleTextBlock}" Margin="0 0 10 0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Age}" Style="{StaticResource styleTextBlock}" Margin="5" VerticalAlignment="Center"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -79,8 +68,8 @@
                     <TextBox Width="200" Margin="5" Text="{Binding LastName}" Style="{StaticResource styleTextBox}"/>
                     <Button Command="{Binding DownloadImage}" Background="Transparent" BorderBrush="Transparent">
                         <StackPanel Orientation="Vertical" Margin="5 0 0 0">
-                            <TextBlock Width="200" Style="{StaticResource styleTextBlock}"  Text="Выбрать фото"/>
-                            <Border BorderBrush="White" BorderThickness="3"  CornerRadius="40" Margin="0 5">
+                            <TextBlock HorizontalAlignment="Center" Style="{StaticResource styleTextBlock}" Text="Выбрать фото"/>
+                            <Border BorderBrush="#4F4FD9" BorderThickness="1"  CornerRadius="40" Margin="0 5">
                                 <Image Source="{Binding Image.Source}" Width="200" Height="200"/>
                             </Border>
                         </StackPanel>
@@ -90,7 +79,8 @@
             </StackPanel>
 
 
-            <Button Style="{StaticResource styleButton}" Margin="50 0" Content="Регистрация" Command="{Binding CreateUser}"/>
+            <Button Style="{StaticResource styleButton}" Content="Регистрация" Command="{Binding CreateUser}" HorizontalAlignment="Center" Width="200" Height="40" Margin="20"/>
+
         </StackPanel>
     </Border>
 </UserControl>
