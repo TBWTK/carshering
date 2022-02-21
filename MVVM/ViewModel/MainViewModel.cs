@@ -26,15 +26,24 @@ namespace carshering.MVVM.ViewModel
         public CarTrackingViewModel CarTrackingVM { get; set; }
         public RelayCommand CarTrackingViewCommand { get; set; }
 
+        public AccountViewModel AccountVM { get; set; }
+        public RelayCommand AccountViewCommand { get; set; }
+
         public MainViewModel()
         {
             CarTrackingVM = new CarTrackingViewModel();
+            AccountVM = new AccountViewModel();
 
             CurrentView = CarTrackingVM;
 
             CarTrackingViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CarTrackingVM;
+            });
+
+            AccountViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = AccountVM;
             });
         }
 

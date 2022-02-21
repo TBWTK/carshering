@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Controls;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using carshering.Core;
+using carshering.MVVM.View;
 
 namespace carshering.MVVM.ViewModel
 {
@@ -29,7 +30,6 @@ namespace carshering.MVVM.ViewModel
 
 
         public RelayCommand CreateUser { get; set; }
-        public RelayCommand DownloadImage { get; set; }
 
         public RegistrationViewModel()
         {
@@ -44,51 +44,22 @@ namespace carshering.MVVM.ViewModel
                 new Role(){ Id = 2, Name = "кто то еще" }
             };
 
-
-            Image = new Image();
-
-
-            DownloadImage = new RelayCommand(o =>
-            {
-                BitmapImage myBitmapImage = new BitmapImage();
-                myBitmapImage.BeginInit();
-                Microsoft.Win32.OpenFileDialog ofdPicture = new Microsoft.Win32.OpenFileDialog();
-                ofdPicture.Filter =
-                    "Image files|*.bmp;*.jpg;*.JPG;*.gif;*.png;*.tif|All files|*.*";
-                ofdPicture.FilterIndex = 1;
-
-                if (ofdPicture.ShowDialog() == true)
-                {
-                    myBitmapImage.UriSource = new Uri(ofdPicture.FileName);
-                    myBitmapImage.EndInit();
-                    Image.Source = myBitmapImage;
-                }
-            });
-
             CreateUser = new RelayCommand(o =>
             {
 
                 if(NodeCategoryRole != null && NodeCategoryGender != null)
                 {
-                    string ex = Login + "  " + Password + "  " + NodeCategoryRole.Name + "  " + NodeCategoryGender.Name;
-                    System.Windows.MessageBox.Show(ex);
+                    //string ex = Login + "  " + Password + "  " + NodeCategoryRole.Name + "  " + NodeCategoryGender.Name;
+                    //System.Windows.MessageBox.Show(ex);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Application.Current.MainWindow.Close();
                 }
                 else
                 {
                     System.Windows.MessageBox.Show("Введены неверные данные");
                 }
             });
-        }
-        
-        private Image _Image;
-        public Image Image
-        {
-            get => _Image;
-            set
-            {
-                _Image = value;
-                OnPropertyChanged("Image");
-            }
         }
 
         private Gender _NodeCategoryGender;
@@ -159,53 +130,6 @@ namespace carshering.MVVM.ViewModel
             }
         }
 
-        private string _Name;
-        public string Name
-        {
-            get => _Name;
-            set
-            {
-                _Name = value;
-                OnPropertyChanged("Name");
-
-            }
-        }
-
-        private string _SecondName;
-        public string SecondName
-        {
-            get => _SecondName;
-            set
-            {
-                _SecondName = value;
-                OnPropertyChanged("SecondName");
-
-            }
-        }
-
-        private string _LastName;
-        public string LastName
-        {
-            get => _LastName;
-            set
-            {
-                _LastName = value;
-                OnPropertyChanged("LastName");
-
-            }
-        }
-
-        private int _Age;
-        public int Age
-        {
-            get => _Age;
-            set
-            {
-                _Age = value;
-                OnPropertyChanged("Age");
-
-            }
-        }
 
         //private Calendar _DateUser;
         //public Calendar DateUser

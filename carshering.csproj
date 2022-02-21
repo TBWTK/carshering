@@ -72,6 +72,10 @@
     </Compile>
     <Compile Include="Core\ObservableObjects.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Page Include="MVVM\View\AccountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AuthenticationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,11 +114,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\ViewModel\AccountViewModel.cs" />
     <Compile Include="MVVM\ViewModel\AuthenticationViewModel.cs" />
     <Compile Include="MVVM\ViewModel\CarTrackingViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="MVVM\View\AccountControl.xaml.cs">
+      <DependentUpon>AccountControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AuthenticationView.xaml.cs">
       <DependentUpon>AuthenticationView.xaml</DependentUpon>
     </Compile>

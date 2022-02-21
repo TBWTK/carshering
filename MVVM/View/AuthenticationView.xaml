@@ -18,15 +18,17 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0" Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="150 5 5 5">
             <RadioButton Style="{StaticResource StyleRadioButton}" 
                          Command="{Binding LoginViewCommand}" 
                          IsChecked="True"
-                         Margin="250 10 5 10"
+                         Width="80"
+                         Margin="5"
                          Content="Вход"/>
             <RadioButton Style="{StaticResource StyleRadioButton}"
                          Command="{Binding RegistrationViewCommand}" 
-                         Margin="0 10 10 10" 
+                         Margin="5" 
+                         Width="220"
                          Content="Регистрация"/>
         </StackPanel>
 

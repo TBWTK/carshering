@@ -7,26 +7,29 @@
              xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    
-    
-    
-    <Grid Background="#272537">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+             d:DesignHeight="600" d:DesignWidth="800">
 
-        <Border Grid.Column="1">
-            <m:Map CredentialsProvider="NLVPzPzfo7VmhPbYNeCW~UE6v2wUoXaqCRIP8WMVy8Q~Am7z1Ta5Ke4LeZgbu-2gBov-SFH0AlEbqK-DmM8NWHTF7C3ZhqutfAwSx-CSwhnZ"
+
+    <Border Background="White" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <m:Map CredentialsProvider="NLVPzPzfo7VmhPbYNeCW~UE6v2wUoXaqCRIP8WMVy8Q~Am7z1Ta5Ke4LeZgbu-2gBov-SFH0AlEbqK-DmM8NWHTF7C3ZhqutfAwSx-CSwhnZ"
                Mode="Road" Center="55.751999,37.617734"
                ZoomLevel="12">
-                <Canvas
+                    <Canvas
                 m:MapLayer.Position="{Binding MarkerMaps}"
                 m:MapLayer.PositionOrigin="BottomCenter" Width="30" Height="30">
-                    <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30" Foreground="Red"/>
-                </Canvas>
-            </m:Map>
-        </Border>
-    </Grid>
+                        <materialDesign:PackIcon Kind="MapMarker" Width="30" Height="30" Foreground="Red"/>
+                    </Canvas>
+                </m:Map>
+            </Grid>
+        </Grid>
+    </Border>
+    
+    
 </UserControl>

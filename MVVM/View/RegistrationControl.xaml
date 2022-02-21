@@ -15,72 +15,28 @@
     <Border CornerRadius="20" Background="White">
         <!--#272537-->
 
-        <StackPanel Margin="5 20 5 5">
-            
-            <StackPanel Orientation="Horizontal">
-                
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Введите логин" Style="{StaticResource styleTextBlock}" Margin="5"/>
-                    <TextBlock Text="Введите пароль" Style="{StaticResource styleTextBlock}" Margin="5"/>
-                    <TextBlock Text="Подтвердите пароль" Style="{StaticResource styleTextBlock}" Margin="5"/>
-                    <TextBlock Text="Введите имя" Style="{StaticResource styleTextBlock}" Margin="5"/>
-                    <TextBlock Text="Введите фамилию" Style="{StaticResource styleTextBlock}" Margin="5"/>
-                    <TextBlock Text="Введите отчество" Style="{StaticResource styleTextBlock}" Margin="5"/>
 
-                    <StackPanel Orientation="Horizontal" Margin="5 10 5 5">
-                        <TextBlock Text="Гендер" Style="{StaticResource styleTextBlock}"/>
-                        <ComboBox ItemsSource="{Binding Genders}" SelectedItem="{Binding NodeCategoryGender}" Margin="10 0 0 0">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}" Foreground="#272537" FontSize="18"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                    </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="50">
 
-                    <StackPanel Orientation="Horizontal" Margin="5 10 5 5">
-                        <TextBlock Text="Роль" Style="{StaticResource styleTextBlock}"/>
-                        <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding NodeCategoryRole}" Margin="10 0 0 0">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Style="{StaticResource styleTextBlock}" Foreground="#272537" FontSize="18"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                    </StackPanel>
+            <TextBlock Text="Введите логин" Style="{StaticResource styleTextBlock}" HorizontalAlignment="Center" Margin="10"/>
+            <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40">
+                <TextBox Text="{Binding Login}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"/>
+            </Border>
 
-                    <StackPanel Orientation="Vertical" Margin="5">
-                        <TextBlock Text="Дата рождения" Style="{StaticResource styleTextBlock}" VerticalAlignment="Center"/>
-                        <!--<DatePicker DisplayDateStart="1/1/1950" SelectedDateFormat="Short" SelectedDate="{Binding DateUser}" />-->
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="5 10 5 5" >
-                        <TextBlock Text="Возраст" Style="{StaticResource styleTextBlock}" Margin="0 0 10 0" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding Age}" Style="{StaticResource styleTextBlock}" Margin="5" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </StackPanel>
 
-                <StackPanel Orientation="Vertical" Margin="5 0 0 0">
-                    <TextBox Width="200" Margin="5"  Text="{Binding Login}" Style="{StaticResource styleTextBox}"/>
-                    <TextBox Width="200" Margin="5" Text="{Binding Password}" Style="{StaticResource styleTextBox}"/>
-                    <TextBox Width="200" Margin="5" Text="{Binding ConfirmPassword}" Style="{StaticResource styleTextBox}"/>
-                    <TextBox Width="200" Margin="5" Text="{Binding Name}" Style="{StaticResource styleTextBox}"/>
-                    <TextBox Width="200" Margin="5" Text="{Binding SecondName}" Style="{StaticResource styleTextBox}"/>
-                    <TextBox Width="200" Margin="5" Text="{Binding LastName}" Style="{StaticResource styleTextBox}"/>
-                    <Button Command="{Binding DownloadImage}" Background="Transparent" BorderBrush="Transparent">
-                        <StackPanel Orientation="Vertical" Margin="5 0 0 0">
-                            <TextBlock HorizontalAlignment="Center" Style="{StaticResource styleTextBlock}" Text="Выбрать фото"/>
-                            <Border BorderBrush="#4F4FD9" BorderThickness="1"  CornerRadius="40" Margin="0 5">
-                                <Image Source="{Binding Image.Source}" Width="200" Height="200"/>
-                            </Border>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-                
-            </StackPanel>
+            <TextBlock Text="Введите пароль" Style="{StaticResource styleTextBlock}" HorizontalAlignment="Center" Margin="10"/>
+            <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40">
+                <TextBox Text="{Binding Password}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"/>
+            </Border>
 
+            <TextBlock Text="Подтвердите пароль" Style="{StaticResource styleTextBlock}" HorizontalAlignment="Center" Margin="10"/>
+            <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40">
+                <TextBox Text="{Binding ConfirmPassword}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"/>
+            </Border>
 
             <Button Style="{StaticResource styleButton}" Content="Регистрация" Command="{Binding CreateUser}" HorizontalAlignment="Center" Width="200" Height="40" Margin="20"/>
 
         </StackPanel>
+
     </Border>
 </UserControl>

@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:carshering.Theme">
 
     <Style x:Key="styleButton" TargetType="{x:Type Button}">
-        <Setter Property="FontFamily" Value="Helvetica"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="22"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="#4F4FD9"/>
@@ -11,7 +11,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="20"
+                    <Border CornerRadius="10"
                                 Background="{TemplateBinding Background}">
 
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

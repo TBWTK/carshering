@@ -28,6 +28,10 @@
                 <view:CarTraackingControl/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:AccountViewModel}">
+                <view:AccountControl/>
+            </DataTemplate>
+
         </ResourceDictionary>
 
 
