@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:carshering.MVVM.View"
              xmlns:viewModel="clr-namespace:carshering.MVVM.ViewModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="500">
     
@@ -18,14 +19,17 @@
             
             <TextBlock Text="Введите логин" Style="{StaticResource styleTextBlock}" HorizontalAlignment="Center" Margin="10"/>
             <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40">
-                <TextBox Text="{Binding Login}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Login}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"  />
             </Border>
-            
+
             <TextBlock Text="Введите пароль" Style="{StaticResource styleTextBlock}" HorizontalAlignment="Center" Margin="10"/>
-            <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40">
-                <TextBox Text="{Binding Password}" Style="{StaticResource styleTextBox}" Margin="5" VerticalAlignment="Center"/>
-            </Border>
-            
+            <StackPanel Orientation="Horizontal">
+                <Border Background="WhiteSmoke" Margin="10" CornerRadius="10" Height="40" Width="330" HorizontalAlignment="Left">
+                    <PasswordBox PasswordChar="{Binding Password}" Style="{StaticResource stylePasswordBox}" Margin="5" VerticalAlignment="Center" />
+                </Border>
+                <Button Width="20" Height="20"/>
+            </StackPanel>
+
             <Button Style="{StaticResource styleButton}" Content="Вход" Command="{Binding EntrySystem}" HorizontalAlignment="Center" Width="200" Height="40" Margin="20"/>
         </StackPanel>
     </Border>

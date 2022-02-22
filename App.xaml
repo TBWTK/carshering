@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="Theme/RadioButtonSwitch.xaml"/>
                 <ResourceDictionary Source="Theme/TextBlockAuth.xaml"/>
                 <ResourceDictionary Source="Theme/TextBoxAuth.xaml"/>
+                <ResourceDictionary Source="Theme/PasswordBoxAuth.xaml"/>
                 <ResourceDictionary Source="Theme/ButtonAuth.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 

@@ -46,49 +46,24 @@ namespace carshering.MVVM.ViewModel
 
             CreateUser = new RelayCommand(o =>
             {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Application.Current.MainWindow.Close();
 
-                if(NodeCategoryRole != null && NodeCategoryGender != null)
-                {
-                    //string ex = Login + "  " + Password + "  " + NodeCategoryRole.Name + "  " + NodeCategoryGender.Name;
-                    //System.Windows.MessageBox.Show(ex);
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    Application.Current.MainWindow.Close();
-                }
-                else
-                {
-                    System.Windows.MessageBox.Show("Введены неверные данные");
-                }
+                //var us = db.User.All(u => u.name == Login && u.password == Password);
+                //if (us)
+                //{
+                //    MessageBox.Show("вы вошли в систему");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("данные неверны");
+
+                //}
             });
         }
 
-        private Gender _NodeCategoryGender;
-        public Gender NodeCategoryGender
-        {
-            get
-            {
-                return _NodeCategoryGender;
-            }
-            set
-            {
-                _NodeCategoryGender = value;
-                OnPropertyChanged("NodeCategoryGender");
-            }
-        }
 
-        private Role _NodeCategoryRole;
-        public Role NodeCategoryRole
-        {
-            get
-            {
-                return _NodeCategoryRole;
-            }
-            set
-            {
-                _NodeCategoryRole = value;
-                OnPropertyChanged("NodeCategoryRole");
-            }
-        }
 
         private string _Login;
         public string Login
